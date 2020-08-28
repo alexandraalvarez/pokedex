@@ -1,0 +1,44 @@
+/*Rojo #E3350D  gris oscuro #313131; blanco #FFF; font-family: "Flexo-Regular",arial,sans-serif; font-size: 16px;*/
+body {
+    margin: 0;
+    padding: 0;
+    font-family: "Flexo-Regular",arial,sans-serif;
+    font-size: 16px;
+    background-color: #313131;
+}
+
+.navbar-color {
+    background-color: #E3350D;
+    margin: 0;
+    padding: 0;
+}
+nav .pokeLogo {
+    padding-top: 2%;
+    width: 20%;
+    height: 20%;
+}
+.col-color {
+    background-color: #ffffff;
+}
+h1 {
+    color: #919191;
+    cursor: default;
+    font-size: 187.5%;
+    line-height: 125%;
+    padding: 2.5%;
+}
+h1 .pokebola {
+    max-width: 5%;
+    max-height: 5%;
+}
+.sectn-search {
+    border: none;
+    color: #ffffff;
+    margin: 0;
+    width: 100%;
+}
+#searchinput {
+    position: relative;
+    vertical-align: top;
+    background-color: transparent;
+}
