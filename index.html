@@ -20,32 +20,35 @@
             <span class="navbar-toggler-icon"></span>
         </button>
     </nav>
-
+    <header class="row justify-content-center">
+        <div class=" col-10 col-color">
+            <h1 class=""><img class="pokebola" src="assets/images/Poké_Ball_icon.svg.png"> Pokédex</h1>
+        </div>
+    </header>
 
     <div class="container-fluid container-color">
-
-        <section class="row-col col-color">
-            <h1 class=""><img class="pokebola" src="assets/images/Poké_Ball_icon.svg.png"> Pokédex</h1>
-        </section>
-
-        <section class="row sectn-search">
-            <div class="col-6">
+        <section class="row align-items-center justify-content-center sectn-search">
+            <div class="col-5 mt-5">
                 <div class="">
-                    <label>Nombre o número</label>
-                    <input data-type="name" type="text" id="searchInput" class="button-white">
-                    <input type="submit" class="button button-search" value="Buscar" id="search">
+                    <label>Número</label>
+                    <input data-type="name" type="text" id="searchInput" class="ml-3 pt-1 pb-2 input-search" placeholder="1-892">
+                    <button type="button" id="search" class="btn btn-search">Buscar</button>
                 </div>
             </div>
-            <div class="col-6">
-                <div class="">
-                    <h2>Busca un Pokémon por su nombre o usando su número.</h2>
+            <div class="col-5 mt-5">
+                <div class="d-flex justify-content-center pt-3 pb-2 divBusca ">
+                    <h3 class="">¡Busca un Pokémon usando su número!</h3>
                 </div>
-                <!--TODO: create black notch <span class="notch-bottom-right-small"> </span> -->
             </div>
         </section>
 
+        <footer class="row mt-5 py-5">
+            <div class="col-12 ">
+                <h6 class="d-flex justify-content-end">Created by Alexandra Álvarez</h6>
+            </div>
+        </footer>
 
-        <section class="">
+    <!--<section class="">
             <div class="">
                 <h3>Ningún Pokémon coincide con tu búsqueda.</h3>
                 <p>Intenta lo siguiente para encontrar resultados:</p>
@@ -55,7 +58,7 @@
                     <li>Intenta buscar con más de un tamaño y forma.</li>
                 </ul>
             </div>
-        </section>
+        </section>-->
         <!-- end of container -->
     </div>
     <script src="https://code.jquery.com/jquery-3.5.1.min.js"
