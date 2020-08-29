@@ -7,6 +7,10 @@ body {
     font-size: 16px;
     background-color: #313131;
 }
+.row {
+    margin-right: 0;
+    margin-left: 0;
+}
 /*nav*/
 .navbar-color {
     background-color: #E3350D;
@@ -33,6 +37,11 @@ h1 .pokebola {
     max-width: 5%;
     max-height: 5%;
 }
+/*container*/
+.container-fluid {
+    padding-left: 0;
+    padding-right: 0;
+}
 /*seccion busqueda*/
 .sectn-search {
     border: none;
@@ -42,9 +51,8 @@ h1 .pokebola {
 }
 #searchinput {
     position: relative;
-    vertical-align: top;
+    vertical-align: middle;
     background-color: transparent;
-    
 }
 label {
     font-weight: 600; 
@@ -56,6 +64,7 @@ label {
 }
 .divBusca {
     background-color: #4dad5b;
+    border-radius: 5px;
 }
 /*footer*/
 footer {
