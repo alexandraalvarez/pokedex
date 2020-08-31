@@ -6,26 +6,33 @@ $(function () {
 
 function displayCard(poke){
   var pokeTypes = poke.types;
-  console.log(pokeTypes);
-  
- 
   var typesObj = [];
-
   var types;
   for (types in pokeTypes) {
     typesObj.push(pokeTypes[types].type);
+    
   }
-   
-  console.log(typesObj);
 
+  var cleanTypes =[];
+  var finalTypes;
+  for (finalTypes in typesObj) {
+    cleanTypes.push(typesObj[finalTypes].name);
+  }
+  
+  var printTypes;
+  for (printTypes of cleanTypes) {
+    //$("#cardBody").append(`<p class="card-text"><span class="badge badge-secondary">${printTypes}</span></p>`);
+    console.log(printTypes);
+  }
+  
 
     var card = `<div class="col-3">
                   <div class="card text-center my-4">
                     <h5 class="card-header">${poke.name}</h5>
                     <img src="${poke.sprites.front_default}" class="card-img-top img-fluid" alt="imagen del pokemon">
-                    <div class="card-body">
+                    <div class="card-body" id="cardBody">
                       <h6 class="card-subtitle mb-2 text-muted">N° ${poke.id}</h6>
-                      <p class="card-text"><span class="badge badge-secondary"></span></p>
+                      <p class="card-text"><span class="badge badge-secondary">Tipos: ${cleanTypes}</span></p>
                     </div>
                   </div>
                 </div>`
