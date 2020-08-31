@@ -74,6 +74,10 @@ label {
     background-color: #E3350D;
     color: #ffffff;
 }
+#div-chartPokes {
+    width: 35%;
+    height: 35%;
+}
 /*footer*/
 footer {
     background-color: #919191;

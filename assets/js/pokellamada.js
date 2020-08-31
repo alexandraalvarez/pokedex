@@ -4,13 +4,14 @@ $(function () {
     });
 });    
 
+//función crea poke cards
 function displayCard(poke){
+  //iterando para rescatar todos los tipos
   var pokeTypes = poke.types;
   var typesObj = [];
   var types;
   for (types in pokeTypes) {
     typesObj.push(pokeTypes[types].type);
-    
   }
 
   var cleanTypes =[];
@@ -24,7 +25,6 @@ function displayCard(poke){
     //$("#cardBody").append(`<p class="card-text"><span class="badge badge-secondary">${printTypes}</span></p>`);
     console.log(printTypes);
   }
-  
 
     var card = `<div class="col-3">
                   <div class="card text-center my-4">
@@ -36,21 +36,48 @@ function displayCard(poke){
                     </div>
                   </div>
                 </div>`
+   
+
+    var chart = new CanvasJS.Chart("div-chartPokes", {
+      animationEnabled: true,
+      title: {
+        text: `Estadísticas de ${poke.name}`
+      },
+      data: [{
+        type: "pie",
+        startAngle: 240,
+        yValueFormatString: "##0.00\"%\"",
+        indexLabel: "{label} {y}",
+        dataPoints: [
+          {y: 79.45, label: "HP"},
+          {y: 7.31, label: "Velocidad"},
+          {y: 7.31, label: "Ataque"},
+          {y: 7.06, label: "Ataque especial"},
+          {y: 4.91, label: "Defensa"},
+          {y: 1.26, label: "Defensa especial"}
+        ]
+      }]
+    });
+    chart.render();
     return card;
 }
 
+//función llamada ajax
 function getPoke(id){
     $.ajax({
       type: "GET",
       url: `https://pokeapi.co/api/v2/pokemon/${id}`,
       success: function (dataPoke) {
-        console.log("data=>", dataPoke);
-        
+        //console.log("data=>", dataPoke);
      $("#div-insertPokes").append(displayCard(dataPoke));
       }
     });
 }
 
+
+
+
+//función rescate id para llamar API
 function idPoke(){
   var id = $("#searchInput").val();
     
@@ -61,6 +88,7 @@ function idPoke(){
     }
 }
 
+//función comprobar numero id válido
 function validId(id){
     var expresionId = /^(([1-9])|([1-9]\d)|([1-7]\d\d)|([8][0-8]\d)|([8][9][0-2]))$/;
     
