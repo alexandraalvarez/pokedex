@@ -66,6 +66,14 @@ label {
     background-color: #4dad5b;
     border-radius: 5px;
 }
+/*sección cards*/
+#div-insertPokes .card {
+    border: 1px solid #313131;
+}
+#div-insertPokes h5 {
+    background-color: #E3350D;
+    color: #ffffff;
+}
 /*footer*/
 footer {
     background-color: #919191;

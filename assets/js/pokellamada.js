@@ -1,46 +1,52 @@
 $(function () {
     $("#search").click(e=>{
-      buscarPersonaje();
+      idPoke();
     });
 });    
 
-/*function generarCard(personaje){
-    var card = `
-    <div class="col-sm-12 col-md-4">
-      <div class="card" style="width:100%;">
-        <img src="${personaje.image}" class="card-img-top img-fluid" alt="...">
-        <div class="card-body">
-          <h5 class="card-title">${personaje.name}</h5>
-          <div>Status : ${personaje.status}</div>
-          <div>Especie : ${personaje.species}</div>
-        </div>
-      </div>
-    </div>
-    `
+/*function displayCard(personaje){
+    var card = `<div class="col-3">
+                  <div class="card text-center my-4">
+                    <h5 class="card-header">${personaje.name}</h5>
+                    <img src="${personaje.image}" class="card-img-top img-fluid" alt="imagen del pokemon">
+                    <div class="card-body">
+                      <h6 class="card-subtitle mb-2 text-muted">N° ${personaje.id}</h6>
+                      <p class="card-text"><span class="badge badge-secondary">${personaje.species}</span></p>
+                    </div>
+                  </div>
+                </div>`
     return card;
-  }*/
+}*/
 
-
-function getPersonaje(id){
+function getPoke(id){
     $.ajax({
       type: "GET",
-      url: `https://pokeapi.co/api/v2/pokemon/1`,
-      success: function (data) {
-        console.log("data=>", data);
+      url: `https://pokeapi.co/api/v2/pokemon/${id}`,
+      success: function (dataPoke) {
+        console.log("data=>", dataPoke);
         
-       // $("#card").append(generarCard(data));
+     // $("#div-insertPokes").append(displayCard(dataPoke));
       }
     });
 }
 
-/*function validacion(id){
-    var expresion = /^\d{1,3}$/;
+function idPoke(){
+  var id = $("#searchInput").val();
     
-    if(!expresion.test(id)){
-      alert("Input invalido");
-      $("input_busqueda").focus();
+    if(validId(id)){
+      getPoke(id);
+      $("#searchInput").val("");
+      $("#searchInput").focus();
+    }
+}
+
+function validId(id){
+    var expresionId = /^(([1-9])|([1-9]\d)|([1-7]\d\d)|([8][0-8]\d)|([8][9][0-2]))$/;
+    
+    if(!expresionId.test(id)){
+      alert("Ingrese un número entre 1 y 892");
+      $("#searchInput").focus();
       return false
     }
-  
     return true;
-  }*/
+}
