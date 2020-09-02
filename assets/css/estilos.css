@@ -57,10 +57,13 @@ h1 .pokebola {
 label {
     font-weight: 600; 
 }
-.btn-search {
+.btn-search, .btn-clean {
     background-color: #4dad5b;
     color: #ffffff;
     font-weight: 600;
+}
+.btn-clean {
+    background-color: #ee6b2f;
 }
 .divBusca {
     background-color: #4dad5b;
@@ -74,10 +77,10 @@ label {
     background-color: #E3350D;
     color: #ffffff;
 }
-#div-chartPokes {
+/*#div-chartPokes {
     width: 35%;
     height: 35%;
-}
+}*/
 /*footer*/
 footer {
     background-color: #919191;

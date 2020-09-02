@@ -2,6 +2,10 @@ $(function () {
     $("#search").click(e=>{
       idPoke();
     });
+
+    $("#clean").click(e=>{
+      limpiar();
+    })
 });    
 
 //función crea poke cards
@@ -36,9 +40,15 @@ function displayCard(poke){
                     </div>
                   </div>
                 </div>`
-   
+    
+    var hp = poke.stats[0].base_stat;
+    var attack = poke.stats[1].base_stat;
+    var defense = poke.stats[2].base_stat;
+    var specialAttack = poke.stats[3].base_stat;
+    var specialDefense = poke.stats[4].base_stat;
+    var speed = poke.stats[5].base_stat;           
 
-    var chart = new CanvasJS.Chart("div-chartPokes", {
+    var chart = new CanvasJS.Chart("div-insertPokes", {
       animationEnabled: true,
       title: {
         text: `Estadísticas de ${poke.name}`
@@ -49,12 +59,12 @@ function displayCard(poke){
         yValueFormatString: "##0.00\"%\"",
         indexLabel: "{label} {y}",
         dataPoints: [
-          {y: 79.45, label: "HP"},
-          {y: 7.31, label: "Velocidad"},
-          {y: 7.31, label: "Ataque"},
-          {y: 7.06, label: "Ataque especial"},
-          {y: 4.91, label: "Defensa"},
-          {y: 1.26, label: "Defensa especial"}
+          {y: hp, label: "HP"},
+          {y: speed, label: "Velocidad"},
+          {y: attack, label: "Ataque"},
+          {y: specialAttack, label: "Ataque especial"},
+          {y: defense, label: "Defensa"},
+          {y: specialDefense, label: "Defensa especial"}
         ]
       }]
     });
@@ -98,4 +108,9 @@ function validId(id){
       return false
     }
     return true;
+}
+
+//función limpiar pantalla
+function limpiar(){
+  $("#div-insertPokes").empty(); 
 }
